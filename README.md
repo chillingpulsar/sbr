@@ -1,4 +1,4 @@
-# sbr — Svelte Blocks Renderer
+# sbr — Svelte Blocks Renderer (strapi)
 
 Lightweight, customizable Svelte 5 renderer for strapi rich-text blocks.
 
@@ -45,9 +45,9 @@ import type {
 - Works out-of-the-box with Tailwind v4 utility classes.
 - Components are small and unopinionated; override via `blocks` and `modifiers`.
 
-## Svelte compatibility
+## Links
 
-- Peer dependency: `
+- GitHub: https://github.com/chillingpulsar/sbr
 
 MIT License
 

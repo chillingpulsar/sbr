@@ -20,6 +20,14 @@
 		"dist",
 		"README.md"
 	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/chillingpulsar/sbr.git"
+	},
+	"homepage": "https://github.com/chillingpulsar/sbr#readme",
+	"bugs": {
+		"url": "https://github.com/chillingpulsar/sbr/issues"
+	},
 	"peerDependencies": {
 		"svelte": "^5.0.0"
 	},
