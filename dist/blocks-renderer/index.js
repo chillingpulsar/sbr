@@ -1,0 +1,16 @@
+// Export the main component
+export { default as BlocksRenderer } from './BlocksRenderer.svelte';
+// Export default components for customization
+export { default as Paragraph } from './components/Paragraph.svelte';
+export { default as Quote } from './components/Quote.svelte';
+export { default as CodeBlock } from './components/CodeBlock.svelte';
+export { default as Heading } from './components/Heading.svelte';
+export { default as Link } from './components/Link.svelte';
+export { default as List } from './components/List.svelte';
+export { default as ListItem } from './components/ListItem.svelte';
+export { default as Image } from './components/Image.svelte';
+export { default as Bold } from './components/Bold.svelte';
+export { default as Italic } from './components/Italic.svelte';
+export { default as Underline } from './components/Underline.svelte';
+export { default as Strikethrough } from './components/Strikethrough.svelte';
+export { default as InlineCode } from './components/InlineCode.svelte';
