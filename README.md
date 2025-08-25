@@ -5,15 +5,15 @@ Lightweight, customizable Svelte 5 renderer for strapi rich-text blocks.
 ## Installation
 
 ```bash
-bun add sbr-mikey
-# or: npm i sbr-mikey / pnpm add sbr-mikey / yarn add sbr-mikey
+bun add sbr-mike
+# or: npm i sbr-mike / pnpm add sbr-mike / yarn add sbr-mike
 ```
 
 ## Usage
 
 ```svelte
 <script lang="ts">
-	import { BlocksRenderer } from 'sbr-mikey';
+	import { BlocksRenderer } from 'sbr-mike';
 
 	const content = [
 		{ type: 'paragraph', children: [{ text: 'Hello world' }] },
@@ -31,13 +31,7 @@ bun add sbr-mikey
 ### Types
 
 ```ts
-import type {
-	RootNode,
-	Node,
-	BlocksContent,
-	ParagraphBlockNode,
-	HeadingBlockNode
-} from 'sbr-mikey';
+import type { RootNode, Node, BlocksContent, ParagraphBlockNode, HeadingBlockNode } from 'sbr-mike';
 ```
 
 ## Styling
