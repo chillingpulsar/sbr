@@ -79,6 +79,8 @@
 	setContext('blocks-renderer', contextValue);
 </script>
 
-{#each content as block, index (index)}
-	<Block content={block} />
-{/each}
+{#key content}
+	{#each content as block, index (index)}
+		<Block content={block} />
+	{/each}
+{/key}
