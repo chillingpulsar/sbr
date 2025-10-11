@@ -2,103 +2,63 @@
 	import { BlocksRenderer, type BlocksContent } from '$lib';
 
 	// Sample content to test the blocks renderer
-	const content: BlocksContent = [
+	let content = $state<BlocksContent>([
 		{
-			type: 'image',
-			image: {
-				ext: '.png',
-				url: 'https://cms.kinetic.co.th/uploads/busch_timeline_2f6d7bae12.png',
-				hash: 'busch_timeline_2f6d7bae12',
-				mime: 'image/png',
-				name: 'busch-timeline.png',
-				size: 168.21,
-				width: 1280,
-				height: 284,
-				caption: null,
-				formats: {
-					large: {
-						ext: '.png',
-						url: '/uploads/large_busch_timeline_2f6d7bae12.png',
-						hash: 'large_busch_timeline_2f6d7bae12',
-						mime: 'image/png',
-						name: 'large_busch-timeline.png',
-						path: null,
-						size: 477.1,
-						width: 1000,
-						height: 222
-					},
-					small: {
-						ext: '.png',
-						url: '/uploads/small_busch_timeline_2f6d7bae12.png',
-						hash: 'small_busch_timeline_2f6d7bae12',
-						mime: 'image/png',
-						name: 'small_busch-timeline.png',
-						path: null,
-						size: 132.93,
-						width: 500,
-						height: 111
-					},
-					medium: {
-						ext: '.png',
-						url: '/uploads/medium_busch_timeline_2f6d7bae12.png',
-						hash: 'medium_busch_timeline_2f6d7bae12',
-						mime: 'image/png',
-						name: 'medium_busch-timeline.png',
-						path: null,
-						size: 281.12,
-						width: 750,
-						height: 166
-					},
-					thumbnail: {
-						ext: '.png',
-						url: '/uploads/thumbnail_busch_timeline_2f6d7bae12.png',
-						hash: 'thumbnail_busch_timeline_2f6d7bae12',
-						mime: 'image/png',
-						name: 'thumbnail_busch-timeline.png',
-						path: null,
-						size: 35.53,
-						width: 245,
-						height: 54
-					}
+			type: 'heading',
+			children: [
+				{
+					type: 'text',
+					text: 'This is a stunning silhouette'
+				}
+			],
+			level: 2
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					type: 'text',
+					text: 'Photograph '
 				},
-				provider: 'local',
-				createdAt: '2025-08-25T05:29:02.592Z',
-				updatedAt: '2025-08-25T05:29:02.592Z',
-				previewUrl: null,
-				alternativeText: 'busch-timeline.png',
-				provider_metadata: null
-			},
-			children: [{ text: '', type: 'text' }]
-		},
-		{ type: 'paragraph', children: [{ text: '', type: 'text' }] },
-		{ type: 'quote', children: [{ text: 'BUSCH', type: 'text' }] },
-		{
-			type: 'paragraph',
-			children: [
-				{ text: 'Founded in 1963 by ', type: 'text' },
-				{ bold: true, text: 'Dr. Karl Busch', type: 'text' },
-				{ text: ' and his wife ', type: 'text' },
-				{ bold: true, text: 'Ayhan in Schopfheim', type: 'text' },
 				{
-					text: ", Germany, Busch Vacuum Solutions has grown into one of the world's largest manufacturers of vacuum pumps, systems, and components. ",
-					type: 'text'
+					type: 'text',
+					text: 'captured during sunset ',
+					underline: true
+				},
+				{
+					type: 'text',
+					text: "or sunrise at what appears to be a tropical beach. In the foreground, a person is sitting or reclining in a traditional wooden boat that's positioned in the shallow water near the shore. The sky is ablaze with warm golden and orange hues as the sun sits low on the horizon, creating a "
+				},
+				{
+					type: 'text',
+					text: 'dramatic backlight',
+					bold: true
+				},
+				{
+					type: 'text',
+					text: ' effect.'
 				}
 			]
 		},
 		{
-			type: 'paragraph',
+			type: 'quote',
 			children: [
 				{
-					text: 'With over 8,000 employees and 110 subsidiaries worldwide, the company provides innovative vacuum solutions for applications in packaging, chemical processing, pharmaceuticals, and more.',
-					type: 'text'
+					type: 'text',
+					text: 'On the left side of the image, several other people are visible as dark silhouettes, possibly standing on the beach or in '
+				},
+				{
+					type: 'text',
+					text: 'shallow water',
+					bold: true
+				},
+				{
+					type: 'text',
+					text: ". On the right side, there's a rocky outcrop or cliff formation. The entire scene is rendered in silhouette against the brilliant sunset, creating a strong contrast between the dark figures and the luminous sky. The water reflects the golden light, and the overall composition evokes a sense of tranquility and the simple beauty of coastal life."
 				}
 			]
-		},
-		{ type: 'paragraph', children: [{ text: '', type: 'text' }] },
-		{ type: 'paragraph', children: [{ text: '', type: 'text' }] },
-		{ type: 'paragraph', children: [{ text: '', type: 'text' }] },
-		{ type: 'paragraph', children: [{ text: '', type: 'text' }] }
-	];
+		}
+	]);
 </script>
 
 <h1>Blocks Renderer Demo</h1>
@@ -107,3 +67,56 @@
 <div class="demo">
 	<BlocksRenderer {content} />
 </div>
+
+<button
+	onclick={() => {
+		content = [
+			{
+				type: 'heading',
+				children: [
+					{
+						type: 'text',
+						text: 'Ito ay isang kahanga-hangang larawan'
+					}
+				],
+				level: 2
+			},
+			{
+				type: 'paragraph',
+				children: [
+					{
+						type: 'text',
+						text: 'Larawang silueta na kinunan sa panahon ng paglilinlim o pagsikat ng araw sa tila isang tropikong dalampasigan. Sa harapan, may isang taong nakaupo o '
+					},
+					{
+						type: 'text',
+						text: 'nakahiga sa',
+						bold: true
+					},
+					{
+						type: 'text',
+						text: ' loob ng isang tradisyonal na bangkang kahoy na nakaposisyon sa mababaw na tubig malapit sa pampang. Ang kalangitan ay nagniningas ng mainit na kulay ginto at '
+					},
+					{
+						type: 'text',
+						text: 'kahel habang ang ara',
+						underline: true
+					},
+					{
+						type: 'text',
+						text: 'w ay mababa sa abot-tanaw, na lumilikha ng dramatikong epekto ng liwanag mula sa likuran.'
+					}
+				]
+			},
+			{
+				type: 'quote',
+				children: [
+					{
+						type: 'text',
+						text: 'Sa kaliwang bahagi ng larawan, makikita ang ilang iba pang mga tao bilang madidilim na silueta, marahil ay nakatayo sa dalampasigan o sa mababaw na tubig. Sa kanang bahagi, may batuhan o talampas. Ang buong eksena ay nakalarawan bilang silueta laban sa maningning na paglilinlim, na lumilikha ng malakas na kaibahan sa pagitan ng madidilim na mga pigura at ang maliwanag na kalangitan. Ang tubig ay sumasalamin sa gintong liwanag, at ang kabuuang komposisyon ay nagpapahiwatig ng pakiramdam ng katahimikan at ang simpleng kagandahan ng buhay sa baybayin.'
+					}
+				]
+			}
+		];
+	}}>Update Content in SPA way</button
+>
