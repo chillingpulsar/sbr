@@ -1,5 +1,23 @@
 export { default as BlocksRenderer } from './BlocksRenderer.svelte';
-export type { RootNode, Node, BlocksContent, TextInlineNode, LinkInlineNode, ListItemInlineNode, DefaultInlineNode, NonTextInlineNode, ParagraphBlockNode, QuoteBlockNode, CodeBlockNode, HeadingBlockNode, ListBlockNode, ImageBlockNode, Modifier, BlockComponentProps, ModifierComponentProps } from './types.js';
+export type {
+	RootNode,
+	Node,
+	BlocksContent,
+	TextInlineNode,
+	LinkInlineNode,
+	ListItemInlineNode,
+	DefaultInlineNode,
+	NonTextInlineNode,
+	ParagraphBlockNode,
+	QuoteBlockNode,
+	CodeBlockNode,
+	HeadingBlockNode,
+	ListBlockNode,
+	ImageBlockNode,
+	Modifier,
+	BlockComponentProps,
+	ModifierComponentProps
+} from './types.js';
 export { default as Paragraph } from './components/Paragraph.svelte';
 export { default as Quote } from './components/Quote.svelte';
 export { default as CodeBlock } from './components/CodeBlock.svelte';
