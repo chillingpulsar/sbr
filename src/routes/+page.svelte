@@ -5,56 +5,163 @@
 	let content = $state<BlocksContent>([
 		{
 			type: 'heading',
+			level: 4,
 			children: [
 				{
-					type: 'text',
-					text: 'This is a stunning silhouette'
+					bold: true,
+					text: 'การเสริมสร้างความร่วมมือกับ Delfin',
+					type: 'text'
 				}
-			],
-			level: 2
+			]
 		},
 		{
 			type: 'paragraph',
 			children: [
 				{
-					type: 'text',
-					text: 'Photograph '
-				},
-				{
-					type: 'text',
-					text: 'captured during sunset ',
-					underline: true
-				},
-				{
-					type: 'text',
-					text: "or sunrise at what appears to be a tropical beach. In the foreground, a person is sitting or reclining in a traditional wooden boat that's positioned in the shallow water near the shore. The sky is ablaze with warm golden and orange hues as the sun sits low on the horizon, creating a "
-				},
-				{
-					type: 'text',
-					text: 'dramatic backlight',
-					bold: true
-				},
-				{
-					type: 'text',
-					text: ' effect.'
+					text: 'บริษัท Kinetic Engineering ได้เสริมสร้างความร่วมมือกับ Delfin Industrial Vacuums ผู้ผลิตระบบเครื่องดูดฝุ่นอุตสาหกรรมชั้นนำระดับโลกจากประเทศอิตาลี ความร่วมมือนี้มุ่งเน้นการส่งมอบโซลูชันเครื่องดูดฝุ่นอุตสาหกรรมขั้นสูงให้กับลูกค้าในประเทศไทย พร้อมทั้งยกระดับมาตรฐานการบริการของเราผ่านการฝึกอบรมเชิงลึกสำหรับทีมงานและพันธมิตรของเรา',
+					type: 'text'
 				}
 			]
 		},
 		{
-			type: 'quote',
+			type: 'paragraph',
 			children: [
 				{
-					type: 'text',
-					text: 'On the left side of the image, several other people are visible as dark silhouettes, possibly standing on the beach or in '
+					text: 'ในฐานะตัวแทนจำหน่ายอย่างเป็นทางการในประเทศไทย ทีมงานของเราได้เดินทางไปยังโรงงานผลิตของ Delfin Industrial Vacuums ในเมืองตูริน ประเทศอิตาลี (Strada della Merla, 49/a 10036 Settimo T.se (TO) Italy - ',
+					type: 'text'
 				},
 				{
-					type: 'text',
-					text: 'shallow water',
-					bold: true
+					url: 'https://www.delfinvacuums.com/',
+					type: 'link',
+					children: [
+						{
+							text: 'https://www.delfinvacuums.com/',
+							type: 'text'
+						}
+					]
 				},
 				{
-					type: 'text',
-					text: ". On the right side, there's a rocky outcrop or cliff formation. The entire scene is rendered in silhouette against the brilliant sunset, creating a strong contrast between the dark figures and the luminous sky. The water reflects the golden light, and the overall composition evokes a sense of tranquility and the simple beauty of coastal life."
+					text: ') เพื่อเสริมสร้างความสัมพันธ์กับผู้ผลิตและเข้ารับการฝึกอบรมเชิงลึกในด้าน:',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: '',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'list',
+			format: 'unordered',
+			children: [
+				{
+					type: 'list-item',
+					children: [
+						{
+							text: 'การขายและการให้คำปรึกษาโซลูชัน',
+							type: 'text'
+						}
+					]
+				}
+			]
+		},
+		{
+			type: 'list',
+			format: 'unordered',
+			children: [
+				{
+					type: 'list-item',
+					children: [
+						{
+							text: 'การติดตั้งระบบเครื่องดูดฝุ่นอุตสาหกรรม',
+							type: 'text'
+						}
+					]
+				}
+			]
+		},
+		{
+			type: 'list',
+			format: 'unordered',
+			children: [
+				{
+					type: 'list-item',
+					children: [
+						{
+							text: 'การบำรุงรักษาและบริการหลังการขาย',
+							type: 'text'
+						}
+					]
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: '',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: 'การฝึกอบรมครอบคลุมผลิตภัณฑ์ทุกประเภท รวมถึงรุ่นมาตรฐาน ระบบ ATEX (ป้องกันการระเบิด) และโซลูชันเกรดเภสัชกรรมที่ต้องการมาตรฐานความสะอาดและความปลอดภัยในระดับสูงสุด',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: 'ความร่วมมือนี้ช่วยให้เราสามารถส่งมอบเทคโนโลยีเครื่องดูดฝุ่นประสิทธิภาพสูงสำหรับใช้งานในอุตสาหกรรมที่หลากหลาย รวมถึงการผลิตอาหารและเครื่องดื่ม การผลิตสารเคมี และภาคเภสัชกรรม',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: '',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'heading',
+			level: 4,
+			children: [
+				{
+					bold: true,
+					text: 'เกี่ยวกับ Delfin',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: 'Delfin (Delfin Industrial Vacuums) ก่อตั้งขึ้นในปี 1991 โดย Antonino Siclari ในประเทศอิตาลี ด้วยวิสัยทัศน์ในการสร้างระบบเครื่องดูดฝุ่นอุตสาหกรรมที่มีประสิทธิภาพ ปลอดภัย และสามารถตอบสนองความต้องการที่หลากหลายของผู้ใช้งาน เป็นเวลากว่า 30 ปี Delfin ได้พัฒนานวัตกรรมและเทคโนโลยีใหม่ๆ อย่างต่อเนื่อง ตั้งแต่เครื่องดูดฝุ่นอุตสาหกรรมมาตรฐานไปจนถึงระบบ ATEX (ป้องกันการระเบิด) รวมถึงโซลูชันเฉพาะสำหรับอุตสาหกรรมเภสัชกรรมและอาหาร',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: 'ปัจจุบัน เครือข่ายการจำหน่ายและบริการของ Delfin ครอบคลุมกว่า 40 ประเทศทั่วโลก และบริษัทได้รับการยอมรับว่าเป็นผู้นำด้านคุณภาพ ความน่าเชื่อถือ และการบริการในตลาดโซลูชันเครื่องดูดฝุ่นอุตสาหกรรม',
+					type: 'text'
 				}
 			]
 		}
@@ -67,56 +174,3 @@
 <div class="demo">
 	<BlocksRenderer {content} />
 </div>
-
-<button
-	onclick={() => {
-		content = [
-			{
-				type: 'heading',
-				children: [
-					{
-						type: 'text',
-						text: 'Ito ay isang kahanga-hangang larawan'
-					}
-				],
-				level: 2
-			},
-			{
-				type: 'paragraph',
-				children: [
-					{
-						type: 'text',
-						text: 'Larawang silueta na kinunan sa panahon ng paglilinlim o pagsikat ng araw sa tila isang tropikong dalampasigan. Sa harapan, may isang taong nakaupo o '
-					},
-					{
-						type: 'text',
-						text: 'nakahiga sa',
-						bold: true
-					},
-					{
-						type: 'text',
-						text: ' loob ng isang tradisyonal na bangkang kahoy na nakaposisyon sa mababaw na tubig malapit sa pampang. Ang kalangitan ay nagniningas ng mainit na kulay ginto at '
-					},
-					{
-						type: 'text',
-						text: 'kahel habang ang ara',
-						underline: true
-					},
-					{
-						type: 'text',
-						text: 'w ay mababa sa abot-tanaw, na lumilikha ng dramatikong epekto ng liwanag mula sa likuran.'
-					}
-				]
-			},
-			{
-				type: 'quote',
-				children: [
-					{
-						type: 'text',
-						text: 'Sa kaliwang bahagi ng larawan, makikita ang ilang iba pang mga tao bilang madidilim na silueta, marahil ay nakatayo sa dalampasigan o sa mababaw na tubig. Sa kanang bahagi, may batuhan o talampas. Ang buong eksena ay nakalarawan bilang silueta laban sa maningning na paglilinlim, na lumilikha ng malakas na kaibahan sa pagitan ng madidilim na mga pigura at ang maliwanag na kalangitan. Ang tubig ay sumasalamin sa gintong liwanag, at ang kabuuang komposisyon ay nagpapahiwatig ng pakiramdam ng katahimikan at ang simpleng kagandahan ng buhay sa baybayin.'
-					}
-				]
-			}
-		];
-	}}>Update Content in SPA way</button
->
