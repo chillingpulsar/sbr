@@ -8,6 +8,8 @@ node_modules
 /.svelte-kit
 /build
 
+wrangler.jsonc
+
 # OS
 .DS_Store
 Thumbs.db
