@@ -1,26 +1,23 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
 	import type { Node } from './types.js';
-	import Text from './Text.svelte';
-	import Self from './Block.svelte';
+	import Text from './text.svelte';
+	import Self from './block.svelte';
+	import { getRenderCTX } from './blocks-renderer.svelte';
 
 	interface Props {
-		content: any;
+		content: Node;
 	}
 
 	let { content }: Props = $props();
 
 	// Get context from BlocksRenderer
-	const context = getContext('blocks-renderer') as {
-		blocks: Record<string, any>;
-		addMissingBlockType: (type: string) => void;
-	};
+	const renderCTX = getRenderCTX();
 
 	const voidTypes = ['image'];
 
 	// EXACT copy of reference implementation, avoiding name clash with snippet `children`
 	const { type, children: nodes, ...rest } = content;
-	const BlockComponent = context.blocks[type];
+	const BlockComponent = renderCTX.blocks[type];
 </script>
 
 {#if BlockComponent}

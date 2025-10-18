@@ -5,38 +5,209 @@
 	let content = $state<BlocksContent>([
 		{
 			type: 'heading',
+			level: 1,
 			children: [
 				{
-					type: 'text',
-					text: 'This is a stunning silhouette'
+					bold: true,
+					text: 'The Future of Web Development',
+					type: 'text'
 				}
-			],
-			level: 2
+			]
 		},
 		{
 			type: 'paragraph',
 			children: [
 				{
-					type: 'text',
-					text: 'Photograph '
+					text: 'Modern web development has evolved dramatically over the past decade. With the introduction of ',
+					type: 'text'
 				},
 				{
-					type: 'text',
-					text: 'captured during sunset ',
-					underline: true
+					italic: true,
+					text: 'reactive frameworks',
+					type: 'text'
 				},
 				{
-					type: 'text',
-					text: "or sunrise at what appears to be a tropical beach. In the foreground, a person is sitting or reclining in a traditional wooden boat that's positioned in the shallow water near the shore. The sky is ablaze with warm golden and orange hues as the sun sits low on the horizon, creating a "
+					text: ' and ',
+					type: 'text'
 				},
 				{
-					type: 'text',
-					text: 'dramatic backlight',
-					bold: true
+					bold: true,
+					text: 'component-based architecture',
+					type: 'text'
 				},
 				{
-					type: 'text',
-					text: ' effect.'
+					text: ', developers can now build complex applications with unprecedented ease.',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'heading',
+			level: 2,
+			children: [
+				{
+					text: 'Key Technologies to Watch',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: 'The landscape is constantly shifting, but these technologies are making waves:',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'list',
+			format: 'unordered',
+			children: [
+				{
+					type: 'list-item',
+					children: [
+						{
+							bold: true,
+							text: 'Svelte 5:',
+							type: 'text'
+						},
+						{
+							text: ' A revolutionary approach to reactivity with runes',
+							type: 'text'
+						}
+					]
+				},
+				{
+					type: 'list-item',
+					children: [
+						{
+							bold: true,
+							text: 'Tailwind v4:',
+							type: 'text'
+						},
+						{
+							text: ' Next-generation utility-first CSS framework',
+							type: 'text'
+						}
+					]
+				},
+				{
+					type: 'list-item',
+					children: [
+						{
+							bold: true,
+							text: 'TypeScript:',
+							type: 'text'
+						},
+						{
+							text: ' Type safety that scales',
+							type: 'text'
+						}
+					]
+				}
+			]
+		},
+		{
+			type: 'heading',
+			level: 3,
+			children: [
+				{
+					text: 'Code Example',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: "Here's how you might define a reactive state in Svelte 5 using ",
+					type: 'text'
+				},
+				{
+					code: true,
+					text: '$state',
+					type: 'text'
+				},
+				{
+					text: ' rune:',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'code',
+			children: [
+				{
+					text: 'let count = $state(0);\nlet doubled = $derived(count * 2);',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'heading',
+			level: 2,
+			children: [
+				{
+					text: 'Best Practices',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: 'When building modern web applications, consider these essential practices:',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'list',
+			format: 'ordered',
+			children: [
+				{
+					type: 'list-item',
+					children: [
+						{
+							strikethrough: true,
+							text: 'Write inline styles',
+							type: 'text'
+						},
+						{
+							text: ' - Use utility classes instead',
+							type: 'text'
+						}
+					]
+				},
+				{
+					type: 'list-item',
+					children: [
+						{
+							text: 'Embrace ',
+							type: 'text'
+						},
+						{
+							underline: true,
+							text: 'component composition',
+							type: 'text'
+						},
+						{
+							text: ' over inheritance',
+							type: 'text'
+						}
+					]
+				},
+				{
+					type: 'list-item',
+					children: [
+						{
+							text: 'Keep your components focused and reusable',
+							type: 'text'
+						}
+					]
 				}
 			]
 		},
@@ -44,17 +215,97 @@
 			type: 'quote',
 			children: [
 				{
-					type: 'text',
-					text: 'On the left side of the image, several other people are visible as dark silhouettes, possibly standing on the beach or in '
+					text: 'The best code is no code at all. Every line of code you write is a liability.',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: 'For more information about modern web development practices, check out ',
+					type: 'text'
 				},
 				{
-					type: 'text',
-					text: 'shallow water',
-					bold: true
+					url: 'https://svelte.dev',
+					type: 'link',
+					children: [
+						{
+							text: "Svelte's official documentation",
+							type: 'text'
+						}
+					]
 				},
 				{
-					type: 'text',
-					text: ". On the right side, there's a rocky outcrop or cliff formation. The entire scene is rendered in silhouette against the brilliant sunset, creating a strong contrast between the dark figures and the luminous sky. The water reflects the golden light, and the overall composition evokes a sense of tranquility and the simple beauty of coastal life."
+					text: ' and ',
+					type: 'text'
+				},
+				{
+					url: 'https://tailwindcss.com',
+					type: 'link',
+					children: [
+						{
+							text: 'Tailwind CSS',
+							type: 'text'
+						}
+					]
+				},
+				{
+					text: '.',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'heading',
+			level: 2,
+			children: [
+				{
+					text: 'Images and Media',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'image',
+			image: {
+				name: 'placeholder.jpg',
+				alternativeText: 'Random placeholder image',
+				url: 'https://picsum.photos/800/400',
+				width: 800,
+				height: 400,
+				hash: 'placeholder_hash',
+				ext: '.jpg',
+				mime: 'image/jpeg',
+				size: 50.5,
+				provider: 'picsum',
+				createdAt: new Date().toISOString(),
+				updatedAt: new Date().toISOString()
+			},
+			children: [
+				{
+					text: '',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: 'Visual content plays a crucial role in modern web experiences. Always ensure your images are ',
+					type: 'text'
+				},
+				{
+					bold: true,
+					italic: true,
+					text: 'optimized',
+					type: 'text'
+				},
+				{
+					text: ' and accessible.',
+					type: 'text'
 				}
 			]
 		}
@@ -67,56 +318,3 @@
 <div class="demo">
 	<BlocksRenderer {content} />
 </div>
-
-<button
-	onclick={() => {
-		content = [
-			{
-				type: 'heading',
-				children: [
-					{
-						type: 'text',
-						text: 'Ito ay isang kahanga-hangang larawan'
-					}
-				],
-				level: 2
-			},
-			{
-				type: 'paragraph',
-				children: [
-					{
-						type: 'text',
-						text: 'Larawang silueta na kinunan sa panahon ng paglilinlim o pagsikat ng araw sa tila isang tropikong dalampasigan. Sa harapan, may isang taong nakaupo o '
-					},
-					{
-						type: 'text',
-						text: 'nakahiga sa',
-						bold: true
-					},
-					{
-						type: 'text',
-						text: ' loob ng isang tradisyonal na bangkang kahoy na nakaposisyon sa mababaw na tubig malapit sa pampang. Ang kalangitan ay nagniningas ng mainit na kulay ginto at '
-					},
-					{
-						type: 'text',
-						text: 'kahel habang ang ara',
-						underline: true
-					},
-					{
-						type: 'text',
-						text: 'w ay mababa sa abot-tanaw, na lumilikha ng dramatikong epekto ng liwanag mula sa likuran.'
-					}
-				]
-			},
-			{
-				type: 'quote',
-				children: [
-					{
-						type: 'text',
-						text: 'Sa kaliwang bahagi ng larawan, makikita ang ilang iba pang mga tao bilang madidilim na silueta, marahil ay nakatayo sa dalampasigan o sa mababaw na tubig. Sa kanang bahagi, may batuhan o talampas. Ang buong eksena ay nakalarawan bilang silueta laban sa maningning na paglilinlim, na lumilikha ng malakas na kaibahan sa pagitan ng madidilim na mga pigura at ang maliwanag na kalangitan. Ang tubig ay sumasalamin sa gintong liwanag, at ang kabuuang komposisyon ay nagpapahiwatig ng pakiramdam ng katahimikan at ang simpleng kagandahan ng buhay sa baybayin.'
-					}
-				]
-			}
-		];
-	}}>Update Content in SPA way</button
->
