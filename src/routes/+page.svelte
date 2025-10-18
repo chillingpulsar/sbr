@@ -5,11 +5,11 @@
 	let content = $state<BlocksContent>([
 		{
 			type: 'heading',
-			level: 4,
+			level: 1,
 			children: [
 				{
 					bold: true,
-					text: 'การเสริมสร้างความร่วมมือกับ Delfin',
+					text: 'The Future of Web Development',
 					type: 'text'
 				}
 			]
@@ -18,149 +18,293 @@
 			type: 'paragraph',
 			children: [
 				{
-					text: 'บริษัท Kinetic Engineering ได้เสริมสร้างความร่วมมือกับ Delfin Industrial Vacuums ผู้ผลิตระบบเครื่องดูดฝุ่นอุตสาหกรรมชั้นนำระดับโลกจากประเทศอิตาลี ความร่วมมือนี้มุ่งเน้นการส่งมอบโซลูชันเครื่องดูดฝุ่นอุตสาหกรรมขั้นสูงให้กับลูกค้าในประเทศไทย พร้อมทั้งยกระดับมาตรฐานการบริการของเราผ่านการฝึกอบรมเชิงลึกสำหรับทีมงานและพันธมิตรของเรา',
-					type: 'text'
-				}
-			]
-		},
-		{
-			type: 'paragraph',
-			children: [
-				{
-					text: 'ในฐานะตัวแทนจำหน่ายอย่างเป็นทางการในประเทศไทย ทีมงานของเราได้เดินทางไปยังโรงงานผลิตของ Delfin Industrial Vacuums ในเมืองตูริน ประเทศอิตาลี (Strada della Merla, 49/a 10036 Settimo T.se (TO) Italy - ',
+					text: 'Modern web development has evolved dramatically over the past decade. With the introduction of ',
 					type: 'text'
 				},
 				{
-					url: 'https://www.delfinvacuums.com/',
-					type: 'link',
-					children: [
-						{
-							text: 'https://www.delfinvacuums.com/',
-							type: 'text'
-						}
-					]
+					italic: true,
+					text: 'reactive frameworks',
+					type: 'text'
 				},
 				{
-					text: ') เพื่อเสริมสร้างความสัมพันธ์กับผู้ผลิตและเข้ารับการฝึกอบรมเชิงลึกในด้าน:',
+					text: ' and ',
 					type: 'text'
-				}
-			]
-		},
-		{
-			type: 'paragraph',
-			children: [
+				},
 				{
-					text: '',
+					bold: true,
+					text: 'component-based architecture',
 					type: 'text'
-				}
-			]
-		},
-		{
-			type: 'list',
-			format: 'unordered',
-			children: [
+				},
 				{
-					type: 'list-item',
-					children: [
-						{
-							text: 'การขายและการให้คำปรึกษาโซลูชัน',
-							type: 'text'
-						}
-					]
-				}
-			]
-		},
-		{
-			type: 'list',
-			format: 'unordered',
-			children: [
-				{
-					type: 'list-item',
-					children: [
-						{
-							text: 'การติดตั้งระบบเครื่องดูดฝุ่นอุตสาหกรรม',
-							type: 'text'
-						}
-					]
-				}
-			]
-		},
-		{
-			type: 'list',
-			format: 'unordered',
-			children: [
-				{
-					type: 'list-item',
-					children: [
-						{
-							text: 'การบำรุงรักษาและบริการหลังการขาย',
-							type: 'text'
-						}
-					]
-				}
-			]
-		},
-		{
-			type: 'paragraph',
-			children: [
-				{
-					text: '',
-					type: 'text'
-				}
-			]
-		},
-		{
-			type: 'paragraph',
-			children: [
-				{
-					text: 'การฝึกอบรมครอบคลุมผลิตภัณฑ์ทุกประเภท รวมถึงรุ่นมาตรฐาน ระบบ ATEX (ป้องกันการระเบิด) และโซลูชันเกรดเภสัชกรรมที่ต้องการมาตรฐานความสะอาดและความปลอดภัยในระดับสูงสุด',
-					type: 'text'
-				}
-			]
-		},
-		{
-			type: 'paragraph',
-			children: [
-				{
-					text: 'ความร่วมมือนี้ช่วยให้เราสามารถส่งมอบเทคโนโลยีเครื่องดูดฝุ่นประสิทธิภาพสูงสำหรับใช้งานในอุตสาหกรรมที่หลากหลาย รวมถึงการผลิตอาหารและเครื่องดื่ม การผลิตสารเคมี และภาคเภสัชกรรม',
-					type: 'text'
-				}
-			]
-		},
-		{
-			type: 'paragraph',
-			children: [
-				{
-					text: '',
+					text: ', developers can now build complex applications with unprecedented ease.',
 					type: 'text'
 				}
 			]
 		},
 		{
 			type: 'heading',
-			level: 4,
+			level: 2,
 			children: [
+				{
+					text: 'Key Technologies to Watch',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: 'The landscape is constantly shifting, but these technologies are making waves:',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'list',
+			format: 'unordered',
+			children: [
+				{
+					type: 'list-item',
+					children: [
+						{
+							bold: true,
+							text: 'Svelte 5:',
+							type: 'text'
+						},
+						{
+							text: ' A revolutionary approach to reactivity with runes',
+							type: 'text'
+						}
+					]
+				},
+				{
+					type: 'list-item',
+					children: [
+						{
+							bold: true,
+							text: 'Tailwind v4:',
+							type: 'text'
+						},
+						{
+							text: ' Next-generation utility-first CSS framework',
+							type: 'text'
+						}
+					]
+				},
+				{
+					type: 'list-item',
+					children: [
+						{
+							bold: true,
+							text: 'TypeScript:',
+							type: 'text'
+						},
+						{
+							text: ' Type safety that scales',
+							type: 'text'
+						}
+					]
+				}
+			]
+		},
+		{
+			type: 'heading',
+			level: 3,
+			children: [
+				{
+					text: 'Code Example',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: "Here's how you might define a reactive state in Svelte 5 using ",
+					type: 'text'
+				},
+				{
+					code: true,
+					text: '$state',
+					type: 'text'
+				},
+				{
+					text: ' rune:',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'code',
+			children: [
+				{
+					text: 'let count = $state(0);\nlet doubled = $derived(count * 2);',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'heading',
+			level: 2,
+			children: [
+				{
+					text: 'Best Practices',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: 'When building modern web applications, consider these essential practices:',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'list',
+			format: 'ordered',
+			children: [
+				{
+					type: 'list-item',
+					children: [
+						{
+							strikethrough: true,
+							text: 'Write inline styles',
+							type: 'text'
+						},
+						{
+							text: ' - Use utility classes instead',
+							type: 'text'
+						}
+					]
+				},
+				{
+					type: 'list-item',
+					children: [
+						{
+							text: 'Embrace ',
+							type: 'text'
+						},
+						{
+							underline: true,
+							text: 'component composition',
+							type: 'text'
+						},
+						{
+							text: ' over inheritance',
+							type: 'text'
+						}
+					]
+				},
+				{
+					type: 'list-item',
+					children: [
+						{
+							text: 'Keep your components focused and reusable',
+							type: 'text'
+						}
+					]
+				}
+			]
+		},
+		{
+			type: 'quote',
+			children: [
+				{
+					text: 'The best code is no code at all. Every line of code you write is a liability.',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: 'For more information about modern web development practices, check out ',
+					type: 'text'
+				},
+				{
+					url: 'https://svelte.dev',
+					type: 'link',
+					children: [
+						{
+							text: "Svelte's official documentation",
+							type: 'text'
+						}
+					]
+				},
+				{
+					text: ' and ',
+					type: 'text'
+				},
+				{
+					url: 'https://tailwindcss.com',
+					type: 'link',
+					children: [
+						{
+							text: 'Tailwind CSS',
+							type: 'text'
+						}
+					]
+				},
+				{
+					text: '.',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'heading',
+			level: 2,
+			children: [
+				{
+					text: 'Images and Media',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'image',
+			image: {
+				name: 'placeholder.jpg',
+				alternativeText: 'Random placeholder image',
+				url: 'https://picsum.photos/800/400',
+				width: 800,
+				height: 400,
+				hash: 'placeholder_hash',
+				ext: '.jpg',
+				mime: 'image/jpeg',
+				size: 50.5,
+				provider: 'picsum',
+				createdAt: new Date().toISOString(),
+				updatedAt: new Date().toISOString()
+			},
+			children: [
+				{
+					text: '',
+					type: 'text'
+				}
+			]
+		},
+		{
+			type: 'paragraph',
+			children: [
+				{
+					text: 'Visual content plays a crucial role in modern web experiences. Always ensure your images are ',
+					type: 'text'
+				},
 				{
 					bold: true,
-					text: 'เกี่ยวกับ Delfin',
+					italic: true,
+					text: 'optimized',
 					type: 'text'
-				}
-			]
-		},
-		{
-			type: 'paragraph',
-			children: [
+				},
 				{
-					text: 'Delfin (Delfin Industrial Vacuums) ก่อตั้งขึ้นในปี 1991 โดย Antonino Siclari ในประเทศอิตาลี ด้วยวิสัยทัศน์ในการสร้างระบบเครื่องดูดฝุ่นอุตสาหกรรมที่มีประสิทธิภาพ ปลอดภัย และสามารถตอบสนองความต้องการที่หลากหลายของผู้ใช้งาน เป็นเวลากว่า 30 ปี Delfin ได้พัฒนานวัตกรรมและเทคโนโลยีใหม่ๆ อย่างต่อเนื่อง ตั้งแต่เครื่องดูดฝุ่นอุตสาหกรรมมาตรฐานไปจนถึงระบบ ATEX (ป้องกันการระเบิด) รวมถึงโซลูชันเฉพาะสำหรับอุตสาหกรรมเภสัชกรรมและอาหาร',
-					type: 'text'
-				}
-			]
-		},
-		{
-			type: 'paragraph',
-			children: [
-				{
-					text: 'ปัจจุบัน เครือข่ายการจำหน่ายและบริการของ Delfin ครอบคลุมกว่า 40 ประเทศทั่วโลก และบริษัทได้รับการยอมรับว่าเป็นผู้นำด้านคุณภาพ ความน่าเชื่อถือ และการบริการในตลาดโซลูชันเครื่องดูดฝุ่นอุตสาหกรรม',
+					text: ' and accessible.',
 					type: 'text'
 				}
 			]
