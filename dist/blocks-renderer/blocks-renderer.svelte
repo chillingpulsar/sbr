@@ -1,5 +1,12 @@
+<script lang="ts" module>
+	import { createContext } from 'svelte';
+	export const [getRenderCTX, setRenderCTX] = createContext<{
+		blocks: Record<string, any>;
+		addMissingBlockType: (type: string) => void;
+	}>();
+</script>
+
 <script lang="ts">
-	import { setContext } from 'svelte';
 	import type {
 		RootNode,
 		Node,
@@ -7,22 +14,22 @@
 		ModifierComponentProps,
 		Modifier
 	} from './types.js';
-	import Block from './Block.svelte';
+	import Block from './block.svelte';
 
 	// Component imports for default components
-	import Paragraph from './components/Paragraph.svelte';
-	import Quote from './components/Quote.svelte';
-	import CodeBlock from './components/CodeBlock.svelte';
-	import Heading from './components/Heading.svelte';
-	import Link from './components/Link.svelte';
-	import List from './components/List.svelte';
-	import ListItem from './components/ListItem.svelte';
-	import Image from './components/Image.svelte';
-	import Bold from './components/Bold.svelte';
-	import Italic from './components/Italic.svelte';
-	import Underline from './components/Underline.svelte';
-	import Strikethrough from './components/Strikethrough.svelte';
-	import InlineCode from './components/InlineCode.svelte';
+	import Paragraph from './components/paragraph.svelte';
+	import Quote from './components/quote.svelte';
+	import CodeBlock from './components/code-block.svelte';
+	import Heading from './components/heading.svelte';
+	import Link from './components/link.svelte';
+	import List from './components/list.svelte';
+	import ListItem from './components/list-item.svelte';
+	import Image from './components/image.svelte';
+	import Bold from './components/bold.svelte';
+	import Italic from './components/italic.svelte';
+	import Underline from './components/underline.svelte';
+	import Strikethrough from './components/strike-through.svelte';
+	import InlineCode from './components/inline-code.svelte';
 
 	interface Props {
 		content: RootNode[];
@@ -76,7 +83,7 @@
 	};
 
 	// Set context for child components
-	setContext('blocks-renderer', contextValue);
+	setRenderCTX(contextValue);
 </script>
 
 {#key content}

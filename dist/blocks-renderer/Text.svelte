@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
+	import { getRenderCTX } from './blocks-renderer.svelte';
 	import type { Modifier } from './types.js';
-	import Self from './Text.svelte';
+	import Self from './text.svelte';
 
 	interface Props {
 		text: string;
@@ -15,11 +15,7 @@
 	let { text, ...modifiers }: Props = $props();
 
 	// Get context from BlocksRenderer
-	const context = getContext('blocks-renderer') as {
-		modifiers: Record<string, any>;
-		addMissingModifierType: (type: string) => void;
-	};
-
+	const renderCTX = getRenderCTX();
 	// Get active modifiers
 	const activeModifiers = $derived(() => {
 		return Object.keys(modifiers).filter((key) => modifiers[key as Modifier]) as Modifier[];
@@ -35,7 +31,7 @@
 {:else}
 	{@const modifiers_list = activeModifiers()}
 	{@const outerModifier = modifiers_list[0]}
-	{@const ModifierComponent = context.modifiers[outerModifier]}
+	{@const ModifierComponent = renderCTX.blocks[outerModifier]}
 	{#if ModifierComponent}
 		{@const Component = ModifierComponent}
 		<Component>
@@ -53,7 +49,7 @@
 		</Component>
 	{:else}
 		<!-- Component not found, skip this modifier -->
-		{context.addMissingModifierType(outerModifier)}
+		{renderCTX.addMissingBlockType(outerModifier)}
 
 		{#if modifiers_list.length === 1}
 			{#each text.split(/\r?\n|\r/g) as part, idx}
