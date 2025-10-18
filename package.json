@@ -1,7 +1,7 @@
 {
 	"name": "sbr-mike",
 	"private": false,
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"type": "module",
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
