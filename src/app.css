@@ -118,4 +118,137 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+
+	.sbr-renderer {
+		@apply leading-relaxed text-foreground;
+
+		/* Headings */
+		& h1 {
+			@apply mt-8 mb-6 text-4xl font-bold tracking-tight;
+		}
+
+		& h2 {
+			@apply mt-7 mb-5 text-3xl font-bold tracking-tight;
+		}
+
+		& h3 {
+			@apply mt-6 mb-4 text-2xl font-semibold;
+		}
+
+		& h4 {
+			@apply mt-5 mb-3 text-xl font-semibold;
+		}
+
+		& h5 {
+			@apply mt-4 mb-3 text-lg font-semibold;
+		}
+
+		& h6 {
+			@apply mt-4 mb-2 text-base font-semibold;
+		}
+
+		/* Paragraphs */
+		& p {
+			@apply mb-4 leading-7;
+		}
+
+		/* Links */
+		& a {
+			@apply text-primary underline underline-offset-4 transition-colors hover:text-primary/80;
+		}
+
+		/* Lists */
+		& ul {
+			@apply mb-4 list-inside list-disc space-y-2;
+		}
+
+		& ol {
+			@apply mb-4 list-inside list-decimal space-y-2;
+		}
+
+		& li {
+			@apply leading-7;
+		}
+
+		& ul ul,
+		& ol ol,
+		& ul ol,
+		& ol ul {
+			@apply mt-2 ml-6;
+		}
+
+		/* Blockquotes */
+		& blockquote {
+			@apply mb-4 border-l-4 border-border py-2 pl-4 text-muted-foreground italic;
+		}
+
+		/* Code */
+		& code {
+			@apply rounded bg-muted px-1.5 py-0.5 font-mono text-sm text-foreground;
+		}
+
+		& pre {
+			@apply mb-4 overflow-x-auto rounded-lg bg-muted p-4;
+		}
+
+		& pre code {
+			@apply bg-transparent p-0 font-mono text-sm leading-6;
+		}
+
+		/* Images */
+		& img {
+			@apply mb-4 h-auto max-w-full rounded-lg;
+		}
+
+		/* Horizontal Rule */
+		& hr {
+			@apply my-8 border-border;
+		}
+
+		/* Strong/Bold */
+		& strong,
+		& b {
+			@apply font-semibold;
+		}
+
+		/* Emphasis/Italic */
+		& em,
+		& i {
+			@apply italic;
+		}
+
+		/* Underline */
+		& u {
+			@apply underline underline-offset-2;
+		}
+
+		/* Strikethrough */
+		& s,
+		& del {
+			@apply line-through;
+		}
+
+		/* Tables */
+		& table {
+			@apply mb-4 w-full border-collapse;
+		}
+
+		& th {
+			@apply border border-border bg-muted px-4 py-2 text-left font-semibold;
+		}
+
+		& td {
+			@apply border border-border px-4 py-2;
+		}
+
+		/* First element margin */
+		& > *:first-child {
+			@apply mt-0;
+		}
+
+		/* Last element margin */
+		& > *:last-child {
+			@apply mb-0;
+		}
+	}
 }

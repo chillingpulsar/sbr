@@ -71,5 +71,8 @@
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.46.1",
 		"vite": "^7.1.10"
+	},
+	"dependencies": {
+		"@tabler/icons-svelte": "^3.35.0"
 	}
 }
