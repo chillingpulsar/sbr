@@ -44,8 +44,8 @@
 		"prepublishOnly": "bun run package"
 	},
 	"devDependencies": {
-		"@eslint/compat": "^1.4.1",
-		"@eslint/js": "^9.39.4",
+		"@eslint/compat": "^2.0.3",
+		"@eslint/js": "^10.0.1",
 		"@lucide/svelte": "^0.546.0",
 		"@sveltejs/adapter-auto": "^6.1.1",
 		"@sveltejs/adapter-cloudflare": "^7.2.8",
