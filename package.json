@@ -1,7 +1,7 @@
 {
 	"name": "sbr-mike",
 	"private": false,
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"type": "module",
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -41,7 +41,7 @@
 		"format": "prettier --plugin=prettier-plugin-svelte --plugin=prettier-plugin-tailwindcss --write .",
 		"lint": "prettier --check . --plugin=prettier-plugin-svelte --plugin=prettier-plugin-tailwindcss && eslint .",
 		"package": "svelte-package",
-		"prepublishOnly": "bun run package"
+		"prepublishOnly": "npm run package"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.3",
