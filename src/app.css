@@ -119,134 +119,222 @@
 		@apply bg-background text-foreground;
 	}
 
+	/*
+	 * Strapi / Payload-style rich text (single wrapper — no separate `prose` parent needed).
+	 * Mirrors common CMS defaults: ~65ch-friendly line length option, outside list markers,
+	 * vertical rhythm, anchor scroll-margin, accessible links.
+	 */
 	.sbr-renderer {
-		@apply leading-relaxed text-foreground;
+		/* min-w-0: grid/flex children can shrink so text wraps instead of overflowing/clipping */
+		@apply w-full min-w-0 text-foreground antialiased;
+		/*
+		 * Body rhythm: use plain line-height — NOT `leading-*` utilities here.
+		 * Tailwind v4 `leading-*` sets `--tw-leading`, which inherits and overrides
+		 * `line-height: var(--tw-leading, var(--text-*--line-height))` on nested
+		 * `text-*` / `leading-*` utilities (inline code, pre, headings), breaking line boxes.
+		 */
+		font-size: var(--text-base);
+		line-height: 1.75;
+		text-rendering: optimizeLegibility;
 
-		/* Headings */
+		/* Optional: add Tailwind `max-w-prose` on `.sbr-renderer` for ~65ch measure (article layouts). */
+
+		/* Headings — tighter tracking, section spacing; scroll-margin for in-page anchors */
+		& h1,
+		& h2,
+		& h3,
+		& h4,
+		& h5,
+		& h6 {
+			@apply scroll-mt-24 font-semibold tracking-tight text-foreground;
+		}
+
 		& h1 {
-			@apply mt-8 mb-6 text-4xl font-bold tracking-tight;
+			@apply mt-8 mb-4 text-4xl font-bold;
 		}
 
 		& h2 {
-			@apply mt-7 mb-5 text-3xl font-bold tracking-tight;
+			@apply mt-10 mb-4 text-3xl font-bold;
 		}
 
 		& h3 {
-			@apply mt-6 mb-4 text-2xl font-semibold;
+			@apply mt-8 mb-3 text-2xl;
 		}
 
 		& h4 {
-			@apply mt-5 mb-3 text-xl font-semibold;
+			@apply mt-6 mb-2 text-xl;
 		}
 
 		& h5 {
-			@apply mt-4 mb-3 text-lg font-semibold;
+			@apply mt-6 mb-2 text-lg;
 		}
 
 		& h6 {
-			@apply mt-4 mb-2 text-base font-semibold;
+			@apply mt-6 mb-2 text-base;
+		}
+
+		/* Stack headings (e.g. subtitle right under title) */
+		& h1 + h2,
+		& h2 + h3,
+		& h3 + h4,
+		& h4 + h5,
+		& h5 + h6 {
+			@apply mt-0;
 		}
 
 		/* Paragraphs */
 		& p {
-			@apply mb-4 leading-7;
+			@apply mb-4 last:mb-0;
 		}
 
-		/* Links */
+		/* Links — long CMS URLs wrap; visible focus like Payload / modern prose */
 		& a {
-			@apply text-primary underline underline-offset-4 transition-colors hover:text-primary/80;
+			@apply wrap-break-word text-primary underline decoration-primary/40 underline-offset-[0.2em] transition-colors;
+			@apply hover:text-primary/90 hover:decoration-primary/70;
+			@apply focus-visible:rounded-sm focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-ring;
 		}
 
-		/* Lists */
+		/* Lists — outside markers + indent (matches Lexical / Payload / GH-flavored defaults) */
 		& ul {
-			@apply mb-4 list-inside list-disc space-y-2;
+			@apply mb-4 list-disc pl-7;
+			list-style-position: outside;
 		}
 
 		& ol {
-			@apply mb-4 list-inside list-decimal space-y-2;
+			@apply mb-4 list-decimal pl-7;
+			list-style-position: outside;
 		}
 
 		& li {
-			@apply leading-7;
+			@apply my-2;
+		}
+
+		& li > p {
+			@apply my-2 first:mt-0 last:mb-0;
+		}
+
+		& li > ul,
+		& li > ol {
+			@apply mt-2 mb-0;
 		}
 
 		& ul ul,
 		& ol ol,
 		& ul ol,
 		& ol ul {
-			@apply mt-2 ml-6;
+			@apply mt-2;
 		}
 
 		/* Blockquotes */
 		& blockquote {
-			@apply mb-4 border-l-4 border-border py-2 pl-4 text-muted-foreground italic;
+			@apply mb-4 border-l-4 border-border py-1 pl-5 text-muted-foreground;
+			@apply [&>p]:italic;
+		}
+
+		& blockquote p {
+			@apply mb-3 last:mb-0;
 		}
 
 		/* Code */
-		& code {
-			@apply rounded bg-muted px-1.5 py-0.5 font-mono text-sm text-foreground;
+		& :not(pre) > code {
+			@apply rounded-md border border-border/60 bg-muted px-1.5 py-px font-mono text-[0.875em] text-foreground;
 		}
 
 		& pre {
-			@apply mb-4 overflow-x-auto rounded-lg bg-muted p-4;
+			@apply mb-4 overflow-x-auto rounded-lg border border-border bg-muted p-4 text-sm leading-relaxed;
 		}
 
 		& pre code {
-			@apply bg-transparent p-0 font-mono text-sm leading-6;
+			@apply border-0 bg-transparent p-0 font-mono text-sm leading-6 text-foreground;
 		}
 
-		/* Images */
-		& img {
+		/* Images & media */
+		& img,
+		& video {
 			@apply mb-4 h-auto max-w-full rounded-lg;
 		}
 
-		/* Horizontal Rule */
-		& hr {
-			@apply my-8 border-border;
+		& figure {
+			@apply my-6;
 		}
 
-		/* Strong/Bold */
+		& figcaption {
+			@apply mt-2 text-center text-sm text-muted-foreground;
+		}
+
+		/* Horizontal rule */
+		& hr {
+			@apply my-10 border-0 border-t border-border;
+		}
+
+		/* Strong / emphasis */
 		& strong,
 		& b {
-			@apply font-semibold;
+			@apply font-semibold text-foreground;
 		}
 
-		/* Emphasis/Italic */
+		& :is(h1, h2, h3, h4, h5, h6) :is(strong, b) {
+			font-weight: inherit;
+		}
+
 		& em,
 		& i {
 			@apply italic;
 		}
 
-		/* Underline */
 		& u {
-			@apply underline underline-offset-2;
+			@apply underline underline-offset-[0.15em];
 		}
 
-		/* Strikethrough */
 		& s,
 		& del {
-			@apply line-through;
+			@apply text-muted-foreground line-through;
 		}
 
-		/* Tables */
+		/* Tables — compact, readable; wrap narrow viewports */
 		& table {
-			@apply mb-4 w-full border-collapse;
+			@apply mb-4 w-full border-collapse text-sm;
+		}
+
+		& thead {
+			@apply border-b border-border;
 		}
 
 		& th {
-			@apply border border-border bg-muted px-4 py-2 text-left font-semibold;
+			@apply border border-border bg-muted px-3 py-2 text-left font-semibold text-foreground;
 		}
 
 		& td {
-			@apply border border-border px-4 py-2;
+			@apply border border-border px-3 py-2 align-top;
 		}
 
-		/* First element margin */
+		& tbody tr:nth-child(even) {
+			@apply bg-muted/30;
+		}
+
+		/* Misc rich text */
+		& sub,
+		& sup {
+			@apply text-xs;
+		}
+
+		& abbr[title] {
+			@apply cursor-help underline decoration-dotted underline-offset-2;
+		}
+
+		& details {
+			@apply mb-4 rounded-lg border border-border bg-muted/20 p-3;
+		}
+
+		& summary {
+			@apply cursor-pointer font-medium;
+		}
+
+		/* Top-level rhythm: trim outer margins (common prose pattern) */
 		& > *:first-child {
 			@apply mt-0;
 		}
 
-		/* Last element margin */
 		& > *:last-child {
 			@apply mb-0;
 		}

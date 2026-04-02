@@ -5,5 +5,14 @@ yarn.lock
 bun.lock
 bun.lockb
 
+# Build & generated (prettier-plugin-svelte crashes on duplicated dist output)
+dist
+.svelte-kit
+build
+.output
+.vercel
+.netlify
+.wrangler
+
 # Miscellaneous
 /static/

@@ -1,15 +1,14 @@
-# sbr — Svelte Blocks Renderer (strapi)
+# sbr
 
-Lightweight, customizable Svelte 5 renderer for strapi rich-text blocks.
+Svelte 5 renderer for Strapi rich-text blocks. Tailwind v4–friendly; override blocks and modifiers as needed.
 
-## Installation
+## Install
 
 ```bash
-bun add sbr-mike
-# or: npm i sbr-mike / pnpm add sbr-mike / yarn add sbr-mike
+bun add sbr-mike | npm i sbr-mike | pnpm add sbr-mike | yarn add sbr-mike
 ```
 
-## Usage
+## Use
 
 ```svelte
 <script lang="ts">
@@ -19,48 +18,15 @@ bun add sbr-mike
 		{ type: 'paragraph', children: [{ text: 'Hello world' }] },
 		{ type: 'heading', level: 2, children: [{ text: 'Title' }] }
 	];
-
-	// Optionally override default block/modifier components
-	const blocks = {};
-	const modifiers = {};
 </script>
 
-<BlocksRenderer {content} {blocks} {modifiers} />
+<BlocksRenderer {content} />
 ```
 
-### Types
+Optional `blocks` and `modifiers` props override default components.
 
 ```ts
 import type { RootNode, Node, BlocksContent, ParagraphBlockNode, HeadingBlockNode } from 'sbr-mike';
 ```
 
-## Styling
-
-- Works out-of-the-box with Tailwind v4 utility classes.
-- Components are small and unopinionated; override via `blocks` and `modifiers`.
-
-## Links
-
-- GitHub: https://github.com/chillingpulsar/sbr
-
-MIT License
-
-Copyright (c) 2025 MY NAME IS VERY LOOOOOOONG
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Licensed under the GNU General Public License v3. See [LICENSE](LICENSE) for details.

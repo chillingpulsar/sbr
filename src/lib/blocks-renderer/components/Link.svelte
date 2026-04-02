@@ -9,4 +9,4 @@
 	let { url, children }: Props = $props();
 </script>
 
-<a href={url} target="_blank" rel="noopener noreferrer">{@render children()}</a>
+<a href={url} target="_blank" rel="noopener noreferrer external">{@render children()}</a>

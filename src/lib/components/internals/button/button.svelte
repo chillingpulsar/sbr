@@ -56,11 +56,11 @@
 </script>
 
 {#if href}
+	<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 	<a
 		bind:this={ref}
 		data-slot="button"
 		class={cn(buttonVariants({ variant, size }), className)}
-		href={disabled ? undefined : href}
 		aria-disabled={disabled}
 		role={disabled ? 'link' : undefined}
 		tabindex={disabled ? -1 : undefined}
