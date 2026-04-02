@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { getRenderCTX } from './blocks-renderer.svelte';
 	import type { Modifier } from './types.js';
-	import Self from './text.svelte';
 
 	interface Props {
 		text: string;
@@ -12,51 +11,43 @@
 		code?: boolean;
 	}
 
-	let { text, ...modifiers }: Props = $props();
+	let { text, ...modifierFlags }: Props = $props();
 
-	// Get context from BlocksRenderer
 	const renderCTX = getRenderCTX();
-	// Get active modifiers
-	const activeModifiers = $derived(() => {
-		return Object.keys(modifiers).filter((key) => modifiers[key as Modifier]) as Modifier[];
+
+	const activeModifiers = $derived.by(() => {
+		return Object.keys(modifierFlags).filter((key) => modifierFlags[key as Modifier]) as Modifier[];
 	});
 </script>
 
 <!-- Build nested components from outside to inside -->
-{#if activeModifiers().length === 0}
-	<!-- No modifiers, just render text with line breaks -->
-	{#each text.split(/\r?\n|\r/g) as part, idx}
+{#snippet lines()}
+	{#each (text ?? '').split(/\r?\n|\r/g) as part, idx (idx)}
 		{#if idx > 0}<br />{/if}{part}
 	{/each}
-{:else}
-	{@const modifiers_list = activeModifiers()}
-	{@const outerModifier = modifiers_list[0]}
-	{@const ModifierComponent = renderCTX.blocks[outerModifier]}
-	{#if ModifierComponent}
-		{@const Component = ModifierComponent}
-		<Component>
-			{#snippet children()}
-				{#if modifiers_list.length === 1}
-					<!-- Last modifier, render the actual text -->
-					{#each text.split(/\r?\n|\r/g) as part, idx}
-						{#if idx > 0}<br />{/if}{part}
-					{/each}
-				{:else}
-					<!-- More modifiers to apply -->
-					<Self {text} {...Object.fromEntries(modifiers_list.slice(1).map((m) => [m, true]))} />
-				{/if}
-			{/snippet}
-		</Component>
-	{:else}
-		<!-- Component not found, skip this modifier -->
-		{renderCTX.addMissingBlockType(outerModifier)}
+{/snippet}
 
-		{#if modifiers_list.length === 1}
-			{#each text.split(/\r?\n|\r/g) as part, idx}
-				{#if idx > 0}<br />{/if}{part}
-			{/each}
+{#snippet renderWithModifiers(mods: Modifier[])}
+	{#if mods.length === 0}
+		{@render lines()}
+	{:else}
+		{@const outer = mods[0]}
+		{@const ModifierComponent = renderCTX.modifiers[outer]}
+		{#if ModifierComponent}
+			{@const Component = ModifierComponent}
+			<Component>
+				{@render renderWithModifiers(mods.slice(1))}
+			</Component>
 		{:else}
-			<Self {text} {...Object.fromEntries(modifiers_list.slice(1).map((m) => [m, true]))} />
+			<!-- Modifier not registered: tracked in a plain Set (non-reactive) -->
+			{renderCTX.addMissingModifierType(outer)}
+			{@render renderWithModifiers(mods.slice(1))}
 		{/if}
 	{/if}
+{/snippet}
+
+{#if activeModifiers.length === 0}
+	{@render lines()}
+{:else}
+	{@render renderWithModifiers(activeModifiers)}
 {/if}

@@ -11,6 +11,8 @@ import svelteConfig from './svelte.config.js';
 const gitignorePath = path.resolve(import.meta.dirname, '.gitignore');
 
 export default defineConfig(
+	// Build output and generated types — not part of the source project for ESLint
+	{ ignores: ['dist/**', '**/dist/**'] },
 	includeIgnoreFile(gitignorePath),
 	js.configs.recommended,
 	ts.configs.recommended,
