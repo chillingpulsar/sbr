@@ -29,6 +29,8 @@ jobs:
 
       - name: Deploy to Cloudflare Pages
         env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CF_PAGES_PROJECT: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
           COMMIT_SHA: ${{ github.sha }}
           COMMIT_MSG: ${{ github.event.head_commit.message || github.sha }}
         run: |
