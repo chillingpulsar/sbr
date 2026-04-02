@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Node } from './types.js';
-	import Text from './text.svelte';
-	import Self from './block.svelte';
+	import Text from './Text.svelte';
+	import Self from './Block.svelte';
 	import { getRenderCTX, type BlockLikeComponent } from './blocks-renderer.svelte';
 
 	interface Props {

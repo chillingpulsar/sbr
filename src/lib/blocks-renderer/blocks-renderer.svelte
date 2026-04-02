@@ -30,19 +30,19 @@
 
 <script lang="ts">
 	import type { RootNode } from './types.js';
-	import Block from './block.svelte';
+	import Block from './Block.svelte';
 
-	import Paragraph from './components/paragraph.svelte';
-	import Quote from './components/quote.svelte';
+	import Paragraph from './components/Paragraph.svelte';
+	import Quote from './components/Quote.svelte';
 	import CodeBlock from './components/code-block.svelte';
-	import Heading from './components/heading.svelte';
-	import Link from './components/link.svelte';
-	import List from './components/list.svelte';
+	import Heading from './components/Heading.svelte';
+	import Link from './components/Link.svelte';
+	import List from './components/List.svelte';
 	import ListItem from './components/list-item.svelte';
-	import Image from './components/image.svelte';
-	import Bold from './components/bold.svelte';
-	import Italic from './components/italic.svelte';
-	import Underline from './components/underline.svelte';
+	import Image from './components/Image.svelte';
+	import Bold from './components/Bold.svelte';
+	import Italic from './components/Italic.svelte';
+	import Underline from './components/Underline.svelte';
 	import Strikethrough from './components/strike-through.svelte';
 	import InlineCode from './components/inline-code.svelte';
 

@@ -5,7 +5,19 @@ Svelte 5 renderer for Strapi rich-text blocks. Tailwind v4–friendly; override 
 ## Install
 
 ```bash
-bun add sbr-mike | npm i sbr-mike | pnpm add sbr-mike | yarn add sbr-mike
+bun add sbr-mike
+```
+
+```bash
+npm i sbr-mike
+```
+
+```bash
+pnpm add sbr-mike
+```
+
+```bash
+yarn add sbr-mike
 ```
 
 ## Use
